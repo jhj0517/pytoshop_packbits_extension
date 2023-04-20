@@ -30,7 +30,8 @@ jobs:
         python setup.py install --prefix=./pytoshop_package
 
     - name: Create ZIP file
-      run: tar -zcvf pytoshop_windows.zip pytoshop_package
+      run: Compress-Archive -Path pytoshop_package -DestinationPath pytoshop_windows.zip
+      shell: pwsh
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
