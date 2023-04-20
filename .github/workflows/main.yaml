@@ -18,9 +18,6 @@ jobs:
       with:
         python-version: 3.7
 
-    - name: Install Cython
-      run: pip install cython
-
     - name: Install pytoshop
       run: pip install --target ./pytoshop_package pytoshop==1.1.0 -I --no-cache-dir
 
