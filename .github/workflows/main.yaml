@@ -21,8 +21,11 @@ jobs:
     - name: Install Cython
       run: pip install cython
 
+    - name: Uninstall wheel
+      run: pip uninstall -y wheel
+
     - name: Install pytoshop
-      run: pip install --target ./pytoshop_package pytoshop==1.1.0
+      run: pip install --target ./pytoshop_package pytoshop
 
     - name: Create ZIP file
       run: tar -zcvf pytoshop_windows.zip pytoshop_package
