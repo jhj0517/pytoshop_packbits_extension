@@ -22,7 +22,7 @@ jobs:
       run: pip install cython
 
     - name: Install pytoshop
-      run: pip install --target ./pytoshop_package pytoshop
+      run: pip install --target ./pytoshop_package pytoshop -I --no-cache-dir
 
     - name: Create ZIP file
       run: tar -zcvf pytoshop_windows.zip pytoshop_package
