@@ -1,4 +1,4 @@
-name: Package pytoshop for macOS
+name: Package pytoshop for Windows
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.9
+        python-version: 3.6
 
     - name: Install Cython
       run: pip install cython
@@ -25,10 +25,10 @@ jobs:
       run: pip install --target ./pytoshop_package pytoshop
 
     - name: Create ZIP file
-      run: zip -r pytoshop_macos.zip pytoshop_package
+      run: tar -zcvf pytoshop_windows.zip pytoshop_package
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: pytoshop_macos
-        path: pytoshop_macos.zip
+        name: pytoshop_windows
+        path: pytoshop_windows.zip
