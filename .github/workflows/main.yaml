@@ -16,12 +16,9 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.7
+        python-version: 3.8
 
     - name: Install pytoshop
-      run: pip install --target ./pytoshop_package pytoshop==1.1.0 -I --no-cache-dir
-
-    - name: Install pytoshop twice
       run: pip install --target ./pytoshop_package pytoshop==1.1.0 -I --no-cache-dir
 
     - name: Create ZIP file
