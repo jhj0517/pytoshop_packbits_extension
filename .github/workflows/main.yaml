@@ -22,7 +22,7 @@ jobs:
       run: pip install cython
 
     - name: Clone pytoshop repository
-      run: git clone https://github.com/fmenozzi/pytoshop.git
+      run: git clone https://github.com/mdboom/pytoshop.git
 
     - name: Install pytoshop
       run: |
