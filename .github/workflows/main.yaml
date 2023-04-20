@@ -21,11 +21,13 @@ jobs:
     - name: Install Cython
       run: pip install cython
 
-    - name: Uninstall wheel
-      run: pip uninstall -y wheel
+    - name: Clone pytoshop repository
+      run: git clone https://github.com/fmenozzi/pytoshop.git
 
     - name: Install pytoshop
-      run: pip install --target ./pytoshop_package pytoshop
+      run: |
+        cd pytoshop
+        python setup.py install --prefix=./pytoshop_package
 
     - name: Create ZIP file
       run: tar -zcvf pytoshop_windows.zip pytoshop_package
